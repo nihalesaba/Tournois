@@ -6,7 +6,8 @@
           <h3 class="page-header"> 
             Liste des terrains 
           </h3>
-
+         <? if (isset($_SESSION["alert"])) echo $_SESSION["alert"]; unset($_SESSION["alert"]);?>
+          <a href="<? echo url::gotolink("./staff/courts/create "); ?>"><h4>Ajouter un nouvel utilisateur</h4></a><br>
           <table class="table table-striped table-advance table-hover">
              <tbody>
                 <tr>

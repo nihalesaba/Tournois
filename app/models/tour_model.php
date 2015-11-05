@@ -15,6 +15,13 @@ class Tour_model extends Model {
 		return $data;
 		
 	}
+	public function CheckExistance($where){
+
+
+		$data=$this->_db->select($this->name,"*",array("AND"=>$where));
+		return $data;
+		
+	}
 
 
 	public function insert($data){

@@ -5,9 +5,10 @@
       <div class="row">
         <div class="col-lg-12">
           <h3 class="page-header"> 
-            Liste des tournois
+            Liste des catégories du tournois
           </h3>
-
+          <? if (isset($_SESSION["alert"])) echo $_SESSION["alert"]; unset($_SESSION["alert"]);?>
+           <a href="<? echo url::gotolink("./staff/tours/create "); ?>"><h4>Ajouter une nouvelle catégorie de tournoi</h4></a><br>
           <table class="table table-striped table-advance table-hover">
              <tbody>
                 <tr>

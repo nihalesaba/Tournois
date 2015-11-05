@@ -24,6 +24,7 @@ class User_model extends Model {
 		return $data;
 		
 	}
+	/* Check the existance*/
 	public function CheckExistance($UserMail){
 
 

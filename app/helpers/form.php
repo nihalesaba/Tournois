@@ -59,7 +59,21 @@ class form
 		</div>
 		';
 	}
-	
+		public static function startitem($label)
+	{
+		echo'<div class="form-group">	  		';
+		echo '<label class="col-md-4 control-label" >'.$label.'</label>';
+		echo '<div class="col-md-4">';
+	}
+		public static function enditem()
+	{
+		echo'
+		</div>
+		</div>
+		';
+	}
+
+			  
 	public static function alert($type,$message)
 	{
 		$alert= '<div class="alert alert-'.$type.'"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.$message.'</div>';

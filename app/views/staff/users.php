@@ -7,6 +7,7 @@
           <h3 class="page-header"> 
             Liste des utilisateurs 
           </h3>
+          <? if (isset($_SESSION["alert"])) echo $_SESSION["alert"]; unset($_SESSION["alert"]);?>
           <a href="<? echo url::gotolink("./staff/users/create "); ?>"><h4>Ajouter un nouvel utilisateur</h4></a><br>
               
              <table class="table table-striped table-advance table-hover">

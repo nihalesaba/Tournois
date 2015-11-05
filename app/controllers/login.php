@@ -84,7 +84,6 @@ class Login extends Controller {
 			
 			if(! empty($Exist))
 			{
-				
 				$data['alert']= form::alert("danger","Votre compte existe déjà veuillez cliquer <a href='#'>ici</a> pour restorer votre mot de passe");	
 			}
 			else

@@ -36,6 +36,10 @@ Router::get('staff/courts', 'staff@courts');
 
 /**TOURNAMENT MANAGEMENT**/
 Router::get('staff/tours', 'staff@tours');
+Router::get('staff/tours/create', 'staff@addtour');
+Router::post('staff/tours/create', 'staff@addtour');
+Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
+Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
 
 
 /**USER ROUTES**/

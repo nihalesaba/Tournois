@@ -33,6 +33,7 @@ class Staff extends Controller {
 	public function adduser(){
 		self::checksession();
 		if (!empty($_POST)) {
+			$_POST["RoleId"]=2;
 			$User = $this->loadModel('user_model');
 			$User->insert($_POST);
 			url::redirect('./');
@@ -161,19 +162,41 @@ class Staff extends Controller {
 	 **/
 	public function tours(){
 		self::checksession();
-		$Court = $this->loadModel('tour_model');
-		$data["Tours"]=$Court->selectAll();
+
+		$Tour = $this->loadModel('tour_model');
+		$data["Tours"]=$Tour->selectAll();
 		$data["active"]=3;
-		$data['title'] = 'Gestion des terrains';
+		$data['title'] = 'Gestion des catégories du tournois';
 		$this->view->rendertemplate('staff_header',$data);
 		$this->view->render('staff/tours',$data);
 		$this->view->rendertemplate('staff_footer',$data);	
 
-	
 	}
 	public function addtour(){
+		self::checksession();
+		if (!empty($_POST)) {
+			$Tour = $this->loadModel('tour_model');
+			
+			$Exist = $Tour->CheckExistance($_POST);
+			if(!empty($Exist))
+			{
+				$data['alert']= form::alert("danger","Cette catégorie pour cette saison existe déjà!");
+			}
+			else
+			{
+				$Tour->insert($_POST);
+				$_SESSION['alert']= form::alert("success","La nouvelle catégorie a bien été insérée!");
+				url::redirect('./');
+			}
+					
+		}
+		
+		$data["active"]=3;
+		$data['title'] = 'Ajouter un nouvelle catégorie dans le tournois';
+		$this->view->rendertemplate('staff_header',$data);
+		$this->view->render('staff/touradd',$data);
+		$this->view->rendertemplate('staff_footer',$data);
 
-	
 	}
 
 	public function viewtour(){
