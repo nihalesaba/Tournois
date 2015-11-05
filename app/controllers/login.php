@@ -66,23 +66,38 @@ class Login extends Controller {
 		Session::destroy();
 
 		$_SESSION = array();
-		Url::redirect('./');
+		Url::redirect('./index');
 
 	}
 
 	public function register(){
 
 		if (!empty($_POST)) {
+			//Load the model 
 			$User = $this->loadModel('user_model');
+			// Set the role Id to 2 as the users are 2
 			$_POST["RoleId"]=2;
+			// Unset the Userpasswordconfirm redondant data in the database
+			unset($_POST["Userpasswordconfirm"]);
+			//Check if the Usermail exists in the DB
+			$Exist= $User->CheckExistance($_POST["UserMail"]);
+			
+			if(! empty($Exist))
+			{
+				
+				$data['alert']= form::alert("danger","Votre compte existe déjà veuillez cliquer <a href='#'>ici</a> pour restorer votre mot de passe");	
+			}
+			else
+			{
 			$User->insert($_POST);
-			url::redirect('./');
+			url::redirect('./index');
+			}
 			
 		}
 		
 		$data['title'] = 'Inscription';
 		$this->view->rendertemplate('header',$data);
-		$this->view->render('staff/useradd',$data);
+		$this->view->render('register',$data);
 		$this->view->rendertemplate('footer',$data);
 
 	

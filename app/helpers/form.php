@@ -1,4 +1,4 @@
-<?php
+   <?php
 
 class form 
 {
@@ -6,7 +6,7 @@ class form
 	{
 		
 
-		echo '"<form class="form-horizontal" data-toggle="validator" role="form" method="post" >"';
+		echo '<form class="form-horizontal" data-toggle="validator" role="form" method="post" >';
 		echo '<fieldset>';
 	}
 	public static function endform()
@@ -28,7 +28,12 @@ class form
 
 
 	public static function input($options)
+
 	{
+		if (isset($options["opt"]))
+		foreach ($options["opt"] as $key => $value) {
+			$opt=$opt." ".$key."='".$value."'";
+		}
 
 		echo '<div class="form-group">';
 		echo '<label class="col-md-4 control-label" >'.$options["label"].'</label>';
@@ -36,7 +41,7 @@ class form
 		$tag='<input name="'.$options["name"].'" type="'.$options["type"].'" class="form-control" id="'.$options["name"].'" placeholder="'.$options["placeholder"].'" data-error="'.$options["$error"].'" class="form-control input-md"';
     	if ($options["required"]==true) $tag=$tag."required ";
     	if (!empty($options["value"])) $tag=$tag."value='".$options["value"]."'";
-    	$tag=$tag."/>";
+    	$tag=$tag.$opt."/>";
     	echo  $tag;
   		echo '<div class="help-block with-errors"></div></div> </div>';
 	}

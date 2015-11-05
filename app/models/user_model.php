@@ -24,6 +24,15 @@ class User_model extends Model {
 		return $data;
 		
 	}
+	public function CheckExistance($UserMail){
+
+
+		$data=$this->_db->select($this->table,"*",array("UserMail"=>$UserMail));
+
+		return $data;
+		
+	}
+
 
 	/*Check if the login is correct*/
 	public function CheckLogin($where){
