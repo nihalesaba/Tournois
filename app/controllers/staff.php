@@ -32,12 +32,21 @@ class Staff extends Controller {
 	
 	public function adduser(){
 		self::checksession();
-		if (!empty($_POST)) {
+		if (!empty($_POST)) 
+		{
 			$_POST["RoleId"]=2;
 			$User = $this->loadModel('user_model');
+			$Exist= $User->CheckExistance($_POST["UserMail"]);
+			
+			if(! empty($Exist))
+			{
+				$data['alert']= form::alert("danger","Votre compte existe déjà veuillez cliquer <a href='#'>ici</a> pour restorer votre mot de passe");	
+			}
+			else
+			{
 			$User->insert($_POST);
 			url::redirect('./');
-			
+			}		
 		}
 		
 		$data["active"]=1;

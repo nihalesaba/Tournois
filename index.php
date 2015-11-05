@@ -22,7 +22,6 @@ Router::get('staff', 'staff@index');
 Router::get('staff/users', 'staff@users');
 Router::get('staff/users/create', 'staff@adduser');
 Router::post('staff/users/create', 'staff@adduser');
-
 Router::get('staff/users/edit/(:num)', 'staff@edituser');
 Router::post('staff/users/edit/(:num)', 'staff@edituser');
 Router::get('staff/users/update/(:num)', 'staff@updateuser');
@@ -44,6 +43,11 @@ Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
 
 /**USER ROUTES**/
 Router::get('user', 'user@index');
+Router::get('user/courts', 'user@courts');
+Router::get('user/courts/create', 'user@addcourt');
+Router::post('user/courts/create', 'user@addcourt');
+Router::get('user/courts/delete/(:num)','user@deletecourt');
+
 
 //if no route found
 Router::error('error@index');

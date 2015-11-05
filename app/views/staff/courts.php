@@ -20,15 +20,13 @@
                   <?php echo $label; ?>
                   
                   </th>
+                 
                   <?php endforeach; ?>
+
+
                         </tr>
                               
-                          <?php 
-                              
-                              $results= $data["Courts"];
-                              foreach($results as $result):
-                             
-                            ?>
+                          <?php  $results= $data["Courts"];   foreach($results as $result):   ?>
 
                           <tr>
                             <td><?php echo $result["CourtId"]; ?></td>

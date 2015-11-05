@@ -11,7 +11,7 @@
              <tbody>
                 <tr>
                   <?php 
-                   $labels =  array("Numéro de terrain","Type de terrain", "Adresse" , "Propriété","Commentaires","Disponible Samedi","Disponible Dimanche", "Nom du proprietaire","Actions" );
+                   $labels =  array("Numéro de terrain","Type de terrain", "Adresse" , "Propriété","Commentaires","Disponible Samedi","Disponible Dimanche", "Actions" );
                   
                   foreach($labels as $label): ?>
                   <th>
@@ -37,7 +37,7 @@
                             <td><?php echo $result["CourtStaffComments"];  ?></td>
                             <td><?php echo $result["CourtAvailSat"];  ?></td>
                             <td><?php echo $result["CourtAvailSun"];  ?></td>
-                            <td><?php echo $result["CourtOwner"];  ?></td>
+                            
                           <td>
 
                             <div class="btn-group">

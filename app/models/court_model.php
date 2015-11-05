@@ -15,7 +15,20 @@ class Court_model extends Model {
 		return $data;
 		
 	}
+		public function CheckExistance($where){
 
+
+		$data=$this->_db->select($this->name,"*",array("AND"=>$where));
+		return $data;
+		
+	}
+		public function selectByUser($UserId){
+
+
+		$data=$this->_db->select($this->name,"*",array("CourtOwner"=>$UserId));
+		return $data;
+		
+	}
 
 	public function insert($data){
 
