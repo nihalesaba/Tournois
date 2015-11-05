@@ -9,7 +9,7 @@
           </h3>
           <a href="<? echo url::gotolink("./staff/users/create "); ?>"><h4>Ajouter un nouvel utilisateur</h4></a><br>
               
-                    <table class="table table-striped table-advance table-hover">
+             <table class="table table-striped table-advance table-hover">
              <tbody>
                 <tr>
                   <?php 

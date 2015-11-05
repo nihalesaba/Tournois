@@ -44,7 +44,10 @@ class Login extends Controller {
 				if ($data["RoleId"]==2)
 					url::redirect('user');
 			}
-			
+			else 
+			{
+				$data['alert']= form::alert("danger","Veuillez vérifiez vos identifiants ");	
+			}
 
 
 		}
@@ -63,18 +66,23 @@ class Login extends Controller {
 		Session::destroy();
 
 		$_SESSION = array();
-		die(var_dump($_SESSION));
 		Url::redirect('./');
 
 	}
 
 	public function register(){
 
-
+		if (!empty($_POST)) {
+			$User = $this->loadModel('user_model');
+			$_POST["RoleId"]=2;
+			$User->insert($_POST);
+			url::redirect('./');
+			
+		}
+		
 		$data['title'] = 'Inscription';
-
 		$this->view->rendertemplate('header',$data);
-		$this->view->render('login',$data);
+		$this->view->render('staff/useradd',$data);
 		$this->view->rendertemplate('footer',$data);
 
 	

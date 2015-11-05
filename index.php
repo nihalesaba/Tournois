@@ -11,6 +11,7 @@ Router::get('', 'welcome@index');
 Router::get('login', 'login@login');
 Router::post('login', 'login@login');
 Router::get('logout', 'login@logout');
+Router::get('register', 'login@register');
 
 /**STAFF ROUTES**/
 Router::get('staff', 'staff@index');

@@ -39,16 +39,6 @@
             <div class="toggle-nav">
                <a><i class="icon_menu"></i></a>
             </div>
-            <ul class="nav pull-left top-menu">
-            <!--logo start-->
-
-            <li>
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <b>Interface Staff</b>
-            </a>
-            </li>
-            <!--logo end-->
-          </ul>
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">
@@ -92,13 +82,13 @@
                   </li>
                   <li class="<?php echo $data['active']==2? "active": "";?>">
                       <a class="" href="<?echo url::gotolink("./staff/courts");?>">
-                          <i class="icon_house_alt"></i>
+                          <img class="icon icons8-Sport-Net" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcElEQVRYR+2WMQ5AIQhD7f0PzQ+DxvwYJ+U51EkX+ihNUA0+gvWbAXgHIiIyB5JKYYbuDNDvt4OZzb4J0Dv/j+X0O3WWDuAAzgA+AhzAGcBHgAM4A7e34Fx/uwsqQAxgB95xoCLxO43Sr/gKxAC4Ax/aqV/YpP7WGQAAAABJRU5ErkJggg==" width="16" height="16">
                           <span>Gestion des terrains</span>
                       </a>
                   </li>
                   <li class="<?php echo $data['active']==3? "active": "";?>">
                       <a class="" href="<?echo url::gotolink("./staff/tours");?>">
-                          <i class="icon_house_alt"></i>
+                          <i class="icon_flowchart"></i>
                           <span>Gestion des tournois</span>
                       </a>
                   </li>

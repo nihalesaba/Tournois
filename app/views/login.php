@@ -7,7 +7,9 @@
 
 
              <div class="login-wrap">
+
             <p class="login-img"><i class="icon_lock_alt"></i></p>
+             <? if (  isset($data["alert"]))echo  $data["alert"]; ?>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
               
@@ -28,7 +30,7 @@
 
             </div>
           
-                <span > Vous n'avez pas encore de compte? <a href="#"><b>Inscrivez vous</b></a></span>
+                <span > Vous n'avez pas encore de compte? <a href="./register"><b>Inscrivez vous</b></a></span>
             </label>
             <button class="btn btn-primary btn-lg btn-block" type="submit">Connexion</button>
         </div>
