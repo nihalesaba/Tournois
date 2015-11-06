@@ -44,8 +44,8 @@ class Staff extends Controller {
 			}
 			else
 			{
-			$User->insert($_POST);
-			url::redirect('./');
+				$User->insert($_POST);
+				url::redirect('./');
 			}		
 		}
 		

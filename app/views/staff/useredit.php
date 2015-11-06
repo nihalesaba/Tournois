@@ -1,37 +1,35 @@
 
-      <!--main content start-->
-    <section id="main-content">
-          <section class="wrapper">
-		  <div class="row">
-				<div class="col-lg-10">
-					<header class="panel-heading">
-           Editer un utilisateur
-          </header>
-          <? 
-          $data=$data["User"][0];
-          ?>
-            <div class="panel-body">
-              <? form::beginform();?>
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-lg-10">
+				<header class="panel-heading">
+           			Editer un utilisateur
+          		</header>
+          		<? 
+          			$data=$data["User"][0];
+          		?>
+            	<div class="panel-body">
+              		<? form::beginform();?>
                     
-
-
                     <!-- Multiple Radios -->
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="Titre">Titre</label>
-                      <div class="col-md-4">
-                      <div class="radio">
-                        <label for="Titre-0">
-                          <input type="radio" name="Titre" id="Titre-0" value="Homme" checked="checked">
-                          Homme
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label for="Titre-1">
-                          <input type="radio" name="Titre" id="Titre-1" value="Femme">
-                          Femme
-                        </label>
-                      </div>
-                      </div>
+                    	<label class="col-md-4 control-label" for="Titre">Titre</label>
+                      	<div class="col-md-4">
+                      		<div class="radio">
+                        		<label for="Titre-0">
+                          			<input type="radio" name="Titre" id="Titre-0" value="Homme" checked="checked">
+                          			Homme
+                        		</label>
+                      		</div>
+                      		<div class="radio">
+                        		<label for="Titre-1">
+                          		<input type="radio" name="Titre" id="Titre-1" value="Femme">
+                          			Femme
+                        		</label>
+                      		</div>
+                      	</div>
                     </div>
 
                     <!-- Text input-->
@@ -50,10 +48,10 @@
                     <? form::endform();?>
                     
 
-                    </div>
-        				</div>
-        			</div>
+				</div>
+			</div>
+		</div>
                     
-              </section>
-            </section>
+	</section>
+</section>
                           <!--main content end-->

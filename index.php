@@ -31,6 +31,10 @@ Router::get('staff/users/delete/(:num)', 'staff@deleteuser');
 
 /**COURTS MANAGEMENT**/
 Router::get('staff/courts', 'staff@courts');
+Router::get('staff/courts/edit/(:num)', 'staff@editcourt');
+Router::post('staff/courts/edit/(:num)', 'staff@editcourt');
+Router::get('staff/courts/create', 'staff@addcourt');
+Router::post('staff/courts/create', 'staff@addcourt');
 
 
 /**TOURNAMENT MANAGEMENT**/
