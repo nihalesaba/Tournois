@@ -15,7 +15,7 @@
 					<tbody>
 						<tr>
 							<?php 
-								$labels = array("Nom complet", "Date de naissance" , " Adresse" , "Numéro de téléphone", "Email", "Actions");
+								$labels = array("id","Nom complet", "Date de naissance" , " Adresse" , "Numéro de téléphone", "Email", "Actions");
 								foreach($labels as $label): ?>
 							<th><?php echo $label; ?></th>
 							<?php endforeach; ?>
@@ -25,6 +25,7 @@
 							      	foreach($results as $result): 
 							?>
 						<tr>
+							<td><?php echo $result["UserId"]; ?></td>
 							<td><?php echo $result["UserFirstName"]." ".$result["UserLastName"]; ?></td>
 							<td><?php echo $result["UserBirthDate"]; ?></td>
 							<td><?php echo $result["UserAddress"]." ".$result["UserAddressN"]." ".$result["UserAddressB"]." ".$result["UserAddressC"]." ".$result["UserAddressL"]; ?></td>

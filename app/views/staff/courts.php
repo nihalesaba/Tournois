@@ -15,7 +15,7 @@
 					<tbody>
 						<tr>
 							<?php 
-								$labels =  array("Numéro de terrain","Type de terrain", "Adresse" , "Propriété","Comment accéder au terrain","Remarques propriétaires","Remarques staff","Disponible Samedi","Disponible Dimanche", "Nom du proprietaire","Actions" );
+								$labels =  array("Numéro de terrain","Type de terrain", "Adresse" , "Propriété","Comment accéder au terrain","Remarques propriétaires","Remarques staff","Disponible Samedi","Disponible Dimanche", "id du proprietaire","Actions" );
 								
 								foreach($labels as $label): ?>
 							<th>

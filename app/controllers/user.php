@@ -83,7 +83,7 @@ class User extends Controller {
 
 	}
 
-	public function deletecourt(){
+	public function deletecourt($id){
 		self::checksession();
 		$data= array("CourtId"=>$id);
 		$Court = $this->loadModel('court_model');
@@ -91,6 +91,21 @@ class User extends Controller {
 		url::redirect('../');
 	}
 
+	public function editcourt($id){
+		self::checksession();
+		$Court = $this->loadModel('court_model');
+		if (!empty($_POST)) {
+			$Court->update($_POST,$id);
+			url::redirect('../');	
+		}
+		$data["Court"]= $Court->show($id);
+		$data["active"]=2;
+		$data['title'] = 'Editer un terrain';
+		$this->view->rendertemplate('user_header',$data);
+		$this->view->render('user/courtedit',$data);
+		$this->view->rendertemplate('user_footer',$data);
+
+	}
 
 	public function updatecourt(){
 

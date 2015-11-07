@@ -35,6 +35,7 @@ Router::get('staff/courts/edit/(:num)', 'staff@editcourt');
 Router::post('staff/courts/edit/(:num)', 'staff@editcourt');
 Router::get('staff/courts/create', 'staff@addcourt');
 Router::post('staff/courts/create', 'staff@addcourt');
+Router::get('staff/courts/delete/(:num)', 'staff@deletecourt');
 
 
 /**TOURNAMENT MANAGEMENT**/
@@ -50,8 +51,8 @@ Router::get('user', 'user@index');
 Router::get('user/courts', 'user@courts');
 Router::get('user/courts/create', 'user@addcourt');
 Router::post('user/courts/create', 'user@addcourt');
-Router::get('user/courts/edit/(:num)', 'user@courtedit');
-Router::post('user/courts/edit/(:num)', 'user@courtedit');
+Router::get('user/courts/edit/(:num)', 'user@editcourt');
+Router::post('user/courts/edit/(:num)', 'user@editcourt');
 Router::get('user/courts/delete/(:num)','user@deletecourt');
 
 
