@@ -50,6 +50,8 @@ Router::get('user', 'user@index');
 Router::get('user/courts', 'user@courts');
 Router::get('user/courts/create', 'user@addcourt');
 Router::post('user/courts/create', 'user@addcourt');
+Router::get('user/courts/edit/(:num)', 'user@courtedit');
+Router::post('user/courts/edit/(:num)', 'user@courtedit');
 Router::get('user/courts/delete/(:num)','user@deletecourt');
 
 

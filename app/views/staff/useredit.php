@@ -19,7 +19,7 @@
                       	<div class="col-md-4">
                       		<div class="radio">
                         		<label for="Titre-0">
-                          			<input type="radio" name="Titre" id="Titre-0" value="Homme" checked="checked">
+                          			<input type="radio" name="Titre" id="Titre-0" value="Homme" >
                           			Homme
                         		</label>
                       		</div>
