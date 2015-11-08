@@ -79,10 +79,10 @@ class Staff extends Controller {
 	public function deleteuser($id){
 		self::checksession();
 
-			$data= array("UserId"=>$id);
-			$User = $this->loadModel('user_model');
-			$User->delete($data);
-			url::redirect('../');
+		$data= array("UserId"=>$id);
+		$User = $this->loadModel('user_model');
+		$User->delete($data);
+		url::redirect('../');
 	}
 
 

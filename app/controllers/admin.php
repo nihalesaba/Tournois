@@ -58,6 +58,15 @@ class Admin extends Controller {
 
 	}
 	
+	public function deletestaff($id){
+		self::checksession();
+
+		$data= array("UserId"=>$id);
+		$User = $this->loadModel('user_model');
+		$User->delete($data);
+		url::redirect('../');
+	}
+	
 	/**
 	 ** Users Functions
 	 **/

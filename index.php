@@ -62,6 +62,7 @@ Router::get('admin', 'admin@index');
 Router::get('admin/staffs', 'admin@staffs');
 Router::get('admin/staffs/create', 'admin@addstaff');
 Router::post('admin/staffs/create','admin@addstaff');
+Router::get('admin/staffs/delete/(:num)', 'admin@deletestaff');
 
 
 //if no route found

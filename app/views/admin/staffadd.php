@@ -31,7 +31,7 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="UserFirstName">Prénom</label>  
 								<div class="col-md-4">
-									<input id="UserFirstName" name="UserFirstName" type="text" placeholder="Votre prénom" class="form-control input-md" required="">
+									<input id="UserFirstName" name="UserFirstName" type="text" placeholder="prénom" class="form-control input-md" required="">
 								</div>
 							</div>
 							<!-- Text input-->
@@ -45,7 +45,7 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="UserBirthDate">Date de naissance</label>  
 								<div class="col-md-4">
-									<input id="UserBirthDate" name="UserBirthDate" type="date" max="2007-12-31" placeholder="Votre date de naissance" class="form-control input-md" required="">
+									<input id="UserBirthDate" name="UserBirthDate" type="date" max="2007-12-31" placeholder="date de naissance" class="form-control input-md" required="">
 								</div>
 							</div>
 							<!-- Text input-->
