@@ -56,6 +56,11 @@ Router::post('user/courts/edit/(:num)', 'user@editcourt');
 Router::get('user/courts/delete/(:num)','user@deletecourt');
 
 
+
+/**ADMIN ROUTES**/
+Router::get('admin', 'admin@index');
+
+
 //if no route found
 Router::error('error@index');
 

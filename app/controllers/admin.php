@@ -7,16 +7,13 @@ class Admin extends Controller {
 	}	
 
 	public function index(){
+	
+		self::checksession();
+		$data['title'] = 'admin';
 
-		if(Session::get('loggin') == false){
-			url::redirect('./login/');
-		}
-
-		$data['title'] = 'Admin';
-
-		$this->view->rendertemplate('header',$data);
-		$this->view->render('admin/admin',$data);
-		$this->view->rendertemplate('footer',$data);	
+		$this->view->rendertemplate('admin_header',$data);
+		$this->view->render('admin/index',$data);
+		$this->view->rendertemplate('admin_footer',$data);	
 	}
 	/**
 	 ** Users Functions
@@ -93,6 +90,20 @@ class Admin extends Controller {
 
 	public function updatetour(){
 
+	}
+	
+	public function checksession(){
+		if (isset($_SESSION["connect"])&& isset($_SESSION['user']["RoleId"])){
+		// checking if the variable connect is set as true and the user is allowed in this section
+			if(Session::get('connect') == false && $_SESSION['user']["RoleId"]==0)
+				
+					{
+							url::redirect('./login');
+					}
+		
+		}
+		else
+			url::redirect('./login');
 	}
 
 	

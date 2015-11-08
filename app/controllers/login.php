@@ -37,10 +37,9 @@ class Login extends Controller {
 
 				if ($data["RoleId"]==0)
 					url::redirect('admin');
-				if ($data["RoleId"]==1)
-					{
-						url::redirect('staff');
-					}
+				if ($data["RoleId"]==1){
+					url::redirect('staff');
+				}
 				if ($data["RoleId"]==2)
 					url::redirect('user');
 			}
