@@ -15,6 +15,49 @@ class Admin extends Controller {
 		$this->view->render('admin/index',$data);
 		$this->view->rendertemplate('admin_footer',$data);	
 	}
+	
+	/**
+	 ** Staffs Functions
+	 **/
+	
+	public function Staffs(){
+		self::checksession();
+		$User = $this->loadModel('user_model');
+		$data["Users"]=$User->selectAllStaffs();
+		$data["active"]=1;
+		$data['title'] = 'Gestion des staffss';
+		$this->view->rendertemplate('admin_header',$data);
+		$this->view->render('admin/staffs',$data);
+		$this->view->rendertemplate('admin_footer',$data);
+	}
+	
+	public function addstaff(){
+		self::checksession();
+		if (!empty($_POST)) 
+		{
+			$_POST["RoleId"]=1;
+			$User = $this->loadModel('user_model');
+			$Exist= $User->CheckExistance($_POST["UserMail"]);
+			
+			if(! empty($Exist))
+			{
+				$data['alert']= form::alert("danger","Votre compte existe déjà veuillez cliquer <a href='#'>ici</a> pour restorer votre mot de passe");	
+			}
+			else
+			{
+				$User->insert($_POST);
+				url::redirect('./');
+			}		
+		}
+		
+		$data["active"]=1;
+		$data['title'] = 'Ajouter un nouvel utilisateur';
+		$this->view->rendertemplate('admin_header',$data);
+		$this->view->render('admin/staffadd',$data);
+		$this->view->rendertemplate('admin_footer',$data);
+
+	}
+	
 	/**
 	 ** Users Functions
 	 **/

@@ -59,6 +59,9 @@ Router::get('user/courts/delete/(:num)','user@deletecourt');
 
 /**ADMIN ROUTES**/
 Router::get('admin', 'admin@index');
+Router::get('admin/staffs', 'admin@staffs');
+Router::get('admin/staffs/create', 'admin@addstaff');
+Router::post('admin/staffs/create','admin@addstaff');
 
 
 //if no route found

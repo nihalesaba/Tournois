@@ -14,6 +14,11 @@ class User_model extends Model {
 		return $data;	
 	}
 	
+	public function selectAllStaffs(){
+		$data=$this->_db->select($this->table,"*",array("RoleId"=>1));
+		return $data;
+	}
+	
 	/*For staff*/
 	public function selectAllUsers(){
 		$data=$this->_db->select($this->table,"*",array("RoleId"=>2));

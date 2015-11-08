@@ -75,7 +75,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="<?php echo $data['active']==1? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./admin/staff");?>">
+                      <a class="" href="<?echo url::gotolink("./admin/staffs");?>">
                           <i class="icon_house_alt"></i>
                           <span>Gestion des staffs</span>
                       </a>
