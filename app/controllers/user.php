@@ -32,6 +32,18 @@ class User extends Controller {
 
 	}
 	/**
+	 **profile
+	 **/
+	 public function profil(){
+		self::checksession(); 
+		$data["active"]=1;
+		$data['title'] = 'Profil';
+		$this->view->rendertemplate('user_header',$data);
+		$this->view->render('user/profil',$data);
+		$this->view->rendertemplate('user_footer',$data);
+	 }
+	 
+	/**
 	 ** courts Functions
 	 **/
 	public function courts(){
