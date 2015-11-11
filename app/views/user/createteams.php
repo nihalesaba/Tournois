@@ -37,7 +37,7 @@
 					</div>
 							
 					<? form::startitem("Avez-vous des remarques ou demandes particulières?");?>
-					<textarea   class="form-control" name="CourtAccessComments" rows=4 cols=40></textarea>
+					<textarea   class="form-control" name="Comment1" rows=4 cols=40></textarea>
 					<? form::enditem();?>
 					<? form::submitbuttons();?>
 					<? form::endform();?>

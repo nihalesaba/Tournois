@@ -32,6 +32,18 @@ class User extends Controller {
 
 	}
 	/**
+	 **profile
+	 **/
+	 public function profil(){
+		self::checksession(); 
+		$data["active"]=1;
+		$data['title'] = 'Profil';
+		$this->view->rendertemplate('user_header',$data);
+		$this->view->render('user/profil',$data);
+		$this->view->rendertemplate('user_footer',$data);
+	 }
+	 
+	/**
 	 ** courts Functions
 	 **/
 	public function courts(){
@@ -149,14 +161,14 @@ class User extends Controller {
 
 	}
 	
-	public function createteams($tourid){
+	public function createteam($tourid){
 		self::checksession();
 		$data["active"]=3;
 		$data["title"] = 'Créer une équipe';
 		
 		if (!empty($_POST)) {
 			$Team = $this->loadModel('team_model');
-
+			                                           
 			$_POST["User1"] = $_SESSION['user']["UserId"];
 			$_POST["Tournament"] = $tourid;
 			

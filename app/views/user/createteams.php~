@@ -23,13 +23,13 @@
 						<div class="col-md-4">
 							<div class="radio">
 								<label for="Bbq1">
-									<input type="radio" name="Bbq1" id="Bbq1-0" value=0 checked="checked">
+									<input type="radio" name="Bbq1" id="Bbq1-0" value=1 >
 										Oui
 								</label>
 							</div>
 							<div class="radio">
 								<label for="Bbq1">
-									<input type="radio" name="Bbq1" id="Bbq1-1" value=1 checked="checked">
+									<input type="radio" name="Bbq1" id="Bbq1-1" value=0 checked="checked">
 										Non
 								</label>
 							</div>
@@ -37,7 +37,7 @@
 					</div>
 							
 					<? form::startitem("Avez-vous des remarques ou demandes particulières?");?>
-					<textarea   class="form-control" name="CourtAccessComments" rows=4 cols=40></textarea>
+					<textarea   class="form-control" name="Comment1" rows=4 cols=40></textarea>
 					<? form::enditem();?>
 					<? form::submitbuttons();?>
 					<? form::endform();?>

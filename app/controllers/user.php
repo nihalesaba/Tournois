@@ -168,12 +168,12 @@ class User extends Controller {
 		
 		if (!empty($_POST)) {
 			$Team = $this->loadModel('team_model');
-
+			                                           
 			$_POST["User1"] = $_SESSION['user']["UserId"];
 			$_POST["Tournament"] = $tourid;
 			
 			$Team->insert($_POST);
-			$_SESSION['alert']= form::alert("success","coucoucouc");
+			$_SESSION['alert']= form::alert("success","non");
 			//url::redirect('./user');
 		}
 		

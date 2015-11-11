@@ -15,7 +15,7 @@
 					<tbody>
 						<tr>
 							<?php 
-								$labels = array("numéro d'équipe","Joueur 1 ", "Numéro de téléphone", "Email", "Joueur 2" , "Numéro de téléphone", "Email", "Rejoindre l'équipe");
+								$labels = array("numéro d'équipe","Joueur 1 ", "Joueur 2", "Rejoindre l'équipe", "Contacter le joueur");
 								foreach($labels as $label): ?>
 							<th><?php echo $label; ?></th>
 							<?php endforeach; ?>
@@ -29,6 +29,11 @@
 							<td><?php echo $result["User1"]; ?></td>
 							<td><?php echo $result["User2"]; ?></td>
 
+							<td>
+								<div class="btn-group">								
+									<a class="btn btn-primary" href="<? echo url::gotolink("./users/tours/").$data["Tourid"]."/".$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
+								</div>
+							</td>
 							<td>
 								<div class="btn-group">
 									<a class="btn btn-primary" href="<? echo url::gotolink("./users/tours/").$data["Tourid"]."/".$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
