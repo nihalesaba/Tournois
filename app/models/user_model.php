@@ -62,5 +62,41 @@ class User_model extends Model {
 		$data=$this->_db->select($this->table,"*",array("UserId"=>$id));
 		return $data;
 	}
+	
+	
+	/* For the user */
+	public function selectPartner(){
+		$data=$this->_db->select($this->table,"*",array("RoleId"=>2));
+		return $data;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

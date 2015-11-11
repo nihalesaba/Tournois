@@ -193,9 +193,15 @@ class Staff extends Controller {
 			}
 			else
 			{
-				$Tour->insert($_POST);
-				$_SESSION['alert']= form::alert("success","La nouvelle catégorie a bien été insérée!");
-				url::redirect('./');
+				if($_POST["TournamentCategory"]=="Famille" && $_POST["TournamentType"]!='Mixte') {
+					$data['alert']= form::alert("danger","Le tournoi des familles doit être mixte!");
+				}
+				else
+				{
+					$Tour->insert($_POST);
+					$_SESSION['alert']= form::alert("success","La nouvelle catégorie a bien été insérée!");
+					url::redirect('./');
+				}
 			}
 					
 		}

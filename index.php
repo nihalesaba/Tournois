@@ -55,6 +55,11 @@ Router::get('user/courts/edit/(:num)', 'user@editcourt');
 Router::post('user/courts/edit/(:num)', 'user@editcourt');
 Router::get('user/courts/delete/(:num)','user@deletecourt');
 
+Router::get('user/tours', 'user@listtour');
+Router::post('user/tours', 'user@listtour');
+Router::get('user/tours/partnerchoose/(:num)', 'user@choosepartner');
+Router::post('user/tours/partnerchoose/(:num)', 'user@choosepartner');
+
 
 
 /**ADMIN ROUTES**/

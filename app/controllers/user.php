@@ -115,9 +115,32 @@ class User extends Controller {
 	 ** tournaments Functions
 	 **/
 	public function listtour(){
-
+		self::checksession();
+		
+		$Tour = $this->loadModel('tour_model');
+		$data["Tours"]=$Tour->selectByUser($_SESSION['user']);
+		$data["active"]=3;
+		$data['title'] = 'Choisir un Tournoi';
+		$this->view->rendertemplate('user_header',$data);
+		$this->view->render('user/tourschoose',$data);
+		$this->view->rendertemplate('user_footer',$data);	
 	
 	}
+	
+	// display the potential partner for the user
+	public function choosepartner($tourid){
+		self::checksession();
+		$User = $this->loadModel('user_model');
+		$data["Users"]=$User->selectPartner();
+		$data["active"]=2;
+		$data['title'] = 'Voici la liste de vos partenaires potentiels';
+		
+		
+		$this->view->rendertemplate('user_header',$data);
+		$this->view->render('user/partnerchoose',$data);
+		$this->view->rendertemplate('user_footer',$data);	
+	}
+	
 	public function send_invitation(){
 
 	

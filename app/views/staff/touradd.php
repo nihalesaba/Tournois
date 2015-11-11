@@ -1,7 +1,7 @@
 <?
-	$TourCat= array( "Pré-minimes","Minimes","Cadets","Scolaires","Juniors","Seniors","Elites" );
+	$TourCat= array( "Pré-minimes","Minimes","Cadets","Scolaires","Juniors","Seniors","Elites","Famille" );
 	
-	$TourType= array( "Hommes","Femmes","Mixte","Famille");
+	$TourType= array( "Homme","Femme","Mixte");
 	
 	$TourYear= array( date('Y'),date('Y', strtotime('+1 year')) ,date('Y', strtotime('+2 year')));
 	

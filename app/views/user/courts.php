@@ -42,7 +42,6 @@
 								<div class="btn-group">
 									<a class="btn btn-primary" href="<? echo url::gotolink("./user/courts").'/show/'.$result["CourtId"];?>"><i class="icon_plus_alt2"></i></a>
 									<a class="btn btn-success" href="<? echo  url::gotolink("./user/courts").'/edit/'.$result["CourtId"];?>"><i class="icon_check_alt2"></i></a>
-									<a class="btn btn-danger" href="<? echo  url::gotolink("./user/courts").'/delete/'.$result["CourtId"];?>"><i class="icon_close_alt2"></i></a>
 								</div>
 							</td>
 						</tr>
