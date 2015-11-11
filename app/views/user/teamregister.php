@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h3 class="page-header"> 
-					Choisir un tournoi
+					Liste des partenaires potentiels
 				</h3>
 				<? if (isset($_SESSION["alert"])) echo $_SESSION["alert"]; unset($_SESSION["alert"]);?>
 				<br>
@@ -12,26 +12,23 @@
 					<tbody>
 						<tr>
 							<?php 
-								$labels = array("Année", "Catégorie" , "Type" ,"Inscription");
-								
+								$labels = array("Nom ", "Date de naissance" , "Numéro de téléphone", "Email", "Inviter");
 								foreach($labels as $label): ?>
-							<th>
-								<?php echo $label; ?>
-							</th>
+							<th><?php echo $label; ?></th>
 							<?php endforeach; ?>
 						</tr>
 						<?php 
-							$results= $data["Tours"];
-							foreach($results as $result):
-							
+							$results= $data["Users"];
+							      	foreach($results as $result): 
 							?>
 						<tr>
-							<td><?php echo $result["TournamentYear"]; ?></td>
-							<td><?php echo $result["TournamentCategory"]; ?></td>
-							<td><?php echo $result["TournamentType"]; ?></td>
+							<td><?php echo $result["UserFirstName"]." ".$result["UserLastName"]; ?></td>
+							<td><?php echo $result["UserBirthDate"]; ?></td>
+							<td><?php echo $result["UserPhone"]; ?></td>
+							<td><?php echo $result["UserMail"]; ?></td>
 							<td>
 								<div class="btn-group">
-									<a class="btn btn-primary" href="<? echo url::gotolink("./user/tours/").$result["TournamentId"];?>"><i class="icon_plus_alt2"></i></a>
+									<a class="btn btn-primary" href="<? echo url::gotolink("./users/extrachoose/").$result["UserId"];?>"><i class="icon_plus_alt2"></i></a>
 								</div>
 							</td>
 						</tr>

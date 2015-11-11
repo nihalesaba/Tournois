@@ -89,10 +89,10 @@
                   <li class="<?php echo $data['active']==3? "active": "";?>">
                       <a class="" href="<?echo url::gotolink("./user/tours");?>">
                           <i class="icon_house_alt"></i>
-                          <span>Je participe</span>
+                          <span>Je participes <?php echo $data['Title'];?></span>
                       </a>
                   </li>
-          
+          			
                   
               </ul>
               <!-- sidebar menu end-->

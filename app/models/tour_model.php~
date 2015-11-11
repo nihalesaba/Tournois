@@ -21,7 +21,7 @@ class Tour_model extends Model {
 		$type = ["Mixte", $User["Titre"]];
 		
 		
-		if($birth > $year-10 && $birth < $year-9){
+		if($birth < $year-10 && $birth < $year-9){
 			$cat = ["Famille", "Pré-minimes"];
 			
 		}elseif($birth > $year-12 && $birth < $year-11){

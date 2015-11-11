@@ -37,7 +37,7 @@
       <!--header start--> 
       <header class="header dark-bg">
             <div class="toggle-nav">
-               <a ><i class="icon_menu"></i></a>
+               <a><i class="icon_menu"></i></a>
             </div>
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
@@ -75,25 +75,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="<?php echo $data['active']==1? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/profile");?>">
+                      <a class="" href="<?echo url::gotolink("./admin/staff");?>">
                           <i class="icon_house_alt"></i>
-                          <span>Voir mon profil</span>
+                          <span>Gestion des staffs</span>
                       </a>
-                  </li>
-                  <li class="<?php echo $data['active']==2? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/courts");?>">
-                          <i class="icon_house_alt"></i>
-                          <span>Mes terrains</span>
-                      </a>
-                  </li>
-                  <li class="<?php echo $data['active']==3? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/tours");?>">
-                          <i class="icon_house_alt"></i>
-                          <span>Je participe</span>
-                      </a>
-                  </li>
-          
-                  
+                  </li>                  
               </ul>
               <!-- sidebar menu end-->
           </div>

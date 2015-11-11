@@ -73,7 +73,13 @@
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
+              <ul class="sidebar-menu"> 
+              		<li class="<?php echo $data['active']==1? "active": "";?>">
+                      <a class="" href="<?echo url::gotolink("./staff/profil");?>">
+                          <i class="icon_house_alt"></i>
+                          <span>Voir mon profil</span>
+                      </a>
+                  </li>             
                   <li class="<?php echo $data['active']==1? "active": "";?>">
                       <a class="" href="<?echo url::gotolink("./staff/users");?>">
                           <i class="icon_house_alt"></i>

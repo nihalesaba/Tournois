@@ -37,7 +37,7 @@
       <!--header start--> 
       <header class="header dark-bg">
             <div class="toggle-nav">
-               <a ><i class="icon_menu"></i></a>
+               <a><i class="icon_menu"></i></a>
             </div>
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
@@ -73,23 +73,24 @@
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
+              <ul class="sidebar-menu"> 
+              		             
                   <li class="<?php echo $data['active']==1? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/profile");?>">
+                      <a class="" href="<?echo url::gotolink("./staff/users");?>">
                           <i class="icon_house_alt"></i>
-                          <span>Voir mon profil</span>
+                          <span>Gestion des utilisateurs</span>
                       </a>
                   </li>
                   <li class="<?php echo $data['active']==2? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/courts");?>">
-                          <i class="icon_house_alt"></i>
-                          <span>Mes terrains</span>
+                      <a class="" href="<?echo url::gotolink("./staff/courts");?>">
+                          <img class="icon icons8-Sport-Net" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcElEQVRYR+2WMQ5AIQhD7f0PzQ+DxvwYJ+U51EkX+ihNUA0+gvWbAXgHIiIyB5JKYYbuDNDvt4OZzb4J0Dv/j+X0O3WWDuAAzgA+AhzAGcBHgAM4A7e34Fx/uwsqQAxgB95xoCLxO43Sr/gKxAC4Ax/aqV/YpP7WGQAAAABJRU5ErkJggg==" width="16" height="16">
+                          <span>Gestion des terrains</span>
                       </a>
                   </li>
                   <li class="<?php echo $data['active']==3? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/tours");?>">
-                          <i class="icon_house_alt"></i>
-                          <span>Je participe</span>
+                      <a class="" href="<?echo url::gotolink("./staff/tours");?>">
+                          <i class="icon_flowchart"></i>
+                          <span>Gestion des tournois</span>
                       </a>
                   </li>
           
