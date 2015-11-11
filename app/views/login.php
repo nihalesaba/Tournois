@@ -7,6 +7,7 @@
 				<span class="input-group-addon"><i class="icon_profile"></i></span>
 				<input type="text" class="form-control" placeholder="E-mail" autofocus name="UserMail" required>
 			</div>
+			
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon_key_alt"></i></span>
 				<input type="password" class="form-control"  name="Userpassword" placeholder="Mot de passe" required>
