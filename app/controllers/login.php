@@ -87,10 +87,47 @@ class Login extends Controller {
 			}
 			else
 			{
-			$User->insert($_POST);
-			url::redirect('./index');
-			}
+				//Ajout d'un nouvel utilisateur dans la base de données
+				$User->insert($_POST);
 			
+				/*** Envoie du mail  confirmant l'inscription****/
+				
+				// Récupération du l'adresse e-mail de l'utilisateur
+				$mail = $_POST["UserMail"]; 
+				// Definition du sujet
+				$subject = "Confirmation de votre inscription";
+				// On filtre les serveurs qui rencontrent des bogues.
+				if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) 
+				{
+					$passage_ligne = "\r\n";
+				}
+				else
+				{
+					$passage_ligne = "\n";
+				}
+				//Création du message.
+				$message = " 
+				Bonjour cher utilisateur,		
+				Vous etes actuellement inscrit sur notre sur notre site
+			    Le staff vous souhaite la bienvenue sur le site :).		
+				";	
+				
+				//Création de la boundary
+				$boundary = "-----=".md5(rand());
+				
+				//Création du header de l'e-mail.
+				$header = "From: \"Staff\"<staff@staff.com>".$passage_ligne;
+				$header.= "Reply-to: \"Staff\" <staff@staff.com>".$passage_ligne;
+				$header.= "MIME-Version: 1.0".$passage_ligne;
+				$header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+				
+				//Envoie de l'e-mail
+				mail($mail, $subject, $message,$header);
+			
+			   	// Redirection vers la page index.php pour afficher Welcome....
+				url::redirect('./index');			
+			}
+		
 		}
 		
 		$data['title'] = 'Inscription';

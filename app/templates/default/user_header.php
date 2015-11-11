@@ -53,7 +53,7 @@
                         <ul class="dropdown-menu extended logout">
                             
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Mon profile</a>
+                                <a href='<?echo url::gotolink("./user/profile");?>'><i class="icon_profile"></i> Editer mes informations</a>
                             </li>
                             <li>
                                 <a href="#"><i class="icon_mail_alt"></i> Communication interne</a>
@@ -74,12 +74,6 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
-                  <li class="<?php echo $data['active']==1? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./user/profile");?>">
-                          <i class="icon_house_alt"></i>
-                          <span>Voir mon profil</span>
-                      </a>
-                  </li>
                   <li class="<?php echo $data['active']==2? "active": "";?>">
                       <a class="" href="<?echo url::gotolink("./user/courts");?>">
                           <i class="icon_house_alt"></i>
