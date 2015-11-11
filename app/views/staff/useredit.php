@@ -12,12 +12,14 @@
 				<div class="panel-body">
 					<? form::beginform();?>
 					<!-- Multiple Radios -->
-					<div class="form-group">
+										<div class="form-group">
 						<label class="col-md-4 control-label" for="Titre">Titre</label>
 						<div class="col-md-4">
+							<?if ($data["Titre"] == "Homme")
+							{?>
 							<div class="radio">
 								<label for="Titre-0">
-								<input type="radio" name="Titre" id="Titre-0" value="Homme" >
+								<input type="radio" name="Titre" id="Titre-0" value="Homme" checked="true">
 								Homme
 								</label>
 							</div>
@@ -26,6 +28,21 @@
 								<input type="radio" name="Titre" id="Titre-1" value="Femme">
 								Femme
 								</label>
+							<?}
+							else if ($data["Titre"] == "Femme")
+							{?>
+							<div class="radio">
+								<label for="Titre-0">
+								<input type="radio" name="Titre" id="Titre-0" value="Homme">
+								Homme
+								</label>
+							</div>
+							<div class="radio">
+								<label for="Titre-1">
+								<input type="radio" name="Titre" id="Titre-1" value="Femme" checked="true">
+								Femme
+								</label>
+							<?}?>
 							</div>
 						</div>
 					</div>
