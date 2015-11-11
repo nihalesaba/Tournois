@@ -28,15 +28,16 @@
 							<td><?php echo $result["TeamId"]; ?></td>
 							<td><?php echo $result["User1"]; ?></td>
 							<td><?php echo $result["User2"]; ?></td>
-
+							
+							
 							<td>
-								<div class="btn-group">								
-									<a class="btn btn-primary" href="<? echo url::gotolink("./users/tours/").$data["Tourid"]."/".$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
+								<div class="btn-group">
+									<a class="btn btn-primary" href="<? echo url::gotolink("./user/tours/jointeam/").$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
 								</div>
 							</td>
 							<td>
-								<div class="btn-group">
-									<a class="btn btn-primary" href="<? echo url::gotolink("./users/tours/").$data["Tourid"]."/".$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
+								<div class="btn-group">								
+									<a class="btn btn-primary" href="<? echo url::gotolink("./user/tours/").$data["Tourid"]."/".$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
 								</div>
 							</td>
 						</tr>

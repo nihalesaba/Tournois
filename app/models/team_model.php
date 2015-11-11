@@ -19,6 +19,11 @@ class Team_model extends Model {
 		return $data;
 	}
 	
+	public function update($data,$id){
+		$data=$this->_db->update($this->name,$data,array("TeamId"=>$id));
+		return $data;
+	}
+	
 	public function delete($id){	
 		$data=$this->_db->delete($this->name,$id);
 		return $data;	

@@ -64,8 +64,8 @@ Router::get('user/tours/(:num)', 'user@teams');
 Router::post('user/tours/(:num)', 'user@teams');
 Router::get('user/tours/createteam/(:num)', 'user@createteam');
 Router::post('user/tours/createteam/(:num)', 'user@createteam');
-Router::get('user/tours/(:num)/(:num)', 'user@createteams');
-Router::post('user/tours/(:num)/(:num)', 'user@createteams');
+Router::get('user/tours/jointeam/(:num)', 'user@jointeam');
+Router::post('user/tours/jointeam/(:num)', 'user@jointeam');
 
 
 

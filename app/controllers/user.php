@@ -174,11 +174,32 @@ class User extends Controller {
 			
 			$Team->insert($_POST);
 			$_SESSION['alert']= form::alert("success","non");
-			//url::redirect('./user');
+			url::redirect('./user');
 		}
 		
 		$this->view->rendertemplate('user_header',$data);
 		$this->view->render('user/createteams',$data);
+		$this->view->rendertemplate('user_footer',$data);
+	}
+	
+	public function jointeam($teamid){
+		self::checksession();
+		$data["active"]=3;
+		$data["title"] = 'Rejoindre une équipe';
+		
+		if (!empty($_POST)) {
+			$Team = $this->loadModel('team_model');
+			                                           
+			$_POST["User2"] = $_SESSION['user']["UserId"];
+			$_POST["Confirmed"] = 1;
+
+			$Team->update($_POST,$teamid);
+			$_SESSION['alert']= form::alert("success","non");
+			//url::redirect('./user');
+		}
+		
+		$this->view->rendertemplate('user_header',$data);
+		$this->view->render('user/jointeam',$data);
 		$this->view->rendertemplate('user_footer',$data);
 	}
 	
