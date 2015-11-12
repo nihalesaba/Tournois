@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `tournaments` (
   `TournamentYear` varchar(45) DEFAULT NULL,
   `TournamentCategory` varchar(265) NOT NULL,
   `TournamentType` varchar(265) NOT NULL,
+  `TournamentDate` date DEFAULT NULL,
   PRIMARY KEY (`TournamentId`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
@@ -5190,7 +5191,27 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `Bbq2` bool DEFAULT 0,
   `Comment1` text,
   `Comment2` text,
+  `Group` int(11),
 	PRIMARY KEY (`TeamId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE IF NOT EXISTS `groups` (
+	`GroupId` int(11) NOT NULL AUTO_INCREMENT,
+	`GroupLeader` int(11),
+	`Court` int(11),
+	`EmergencyCourt` int(11),
+	PRIMARY KEY (`GroupId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+DROP TABLE IF EXISTS `matchs`;
+CREATE TABLE IF NOT EXISTS  `matchs` (
+	`MatchId` int(11),
+	`Team1` int(11),
+	`Team2` int(11),
+	`Tournament` int(11),
+	`Type` varchar(20),    /* group,8final,4final,2final,final */
+	PRIMARY KEY (`MatchId`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 
