@@ -174,7 +174,7 @@ class User extends Controller {
 			
 			$Team->insert($_POST);
 			$_SESSION['alert']= form::alert("success","non");
-			url::redirect('./user');
+			url::redirect('./..');
 		}
 		
 		$this->view->rendertemplate('user_header',$data);
@@ -189,13 +189,16 @@ class User extends Controller {
 		
 		if (!empty($_POST)) {
 			$Team = $this->loadModel('team_model');
+			$team1 = $Team->selectById($teamid);
+			if($team1["User1"]!= $_SESSION['user']["UserId"]){
 			                                           
-			$_POST["User2"] = $_SESSION['user']["UserId"];
-			$_POST["Confirmed"] = 1;
+				$_POST["User2"] = $_SESSION['user']["UserId"];
+				$_POST["Confirmed"] = 1;
 
-			$Team->update($_POST,$teamid);
-			$_SESSION['alert']= form::alert("success","non");
-			//url::redirect('./user');
+				$Team->update($_POST,$teamid);
+				$_SESSION['alert']= form::alert("success","non");
+				//url::redirect('./user');
+			}
 		}
 		
 		$this->view->rendertemplate('user_header',$data);

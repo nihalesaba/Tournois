@@ -32,7 +32,7 @@
 							
 							<td>
 								<div class="btn-group">
-									<a class="btn btn-primary" href="<? echo url::gotolink("./user/tours/jointeam/").$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
+										<a class="btn btn-primary" href="<? echo url::gotolink("./user/tours/jointeam/").$result["TeamId"];?>"><i class="icon_plus_alt2"></i></a>
 								</div>
 							</td>
 							<td>

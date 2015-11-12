@@ -9,6 +9,11 @@ class Team_model extends Model {
 	
 	
 	/*For Admin*/
+	public function selectById($id){
+		$data=$this->_db->select($this->name,"*", array("TeamId"=>$id));
+		return $data;	
+	}
+	
 	public function selectAll(){
 		$data=$this->_db->select($this->name,"*");
 		return $data;	

@@ -20,7 +20,7 @@ class Team_model extends Model {
 	}
 	
 	public function update($data,$id){
-		$data=$this->_db->update($this->table,$data,array("TeamId"=>$id));
+		$data=$this->_db->update($this->name,$data,array("TeamId"=>$id));
 		return $data;
 	}
 	
