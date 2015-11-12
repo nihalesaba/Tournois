@@ -52,7 +52,7 @@
 					<? form::input(array("label"=>"Date de naissance","name"=>"UserBirthDate","type"=>"date","placeholder"=>"Date de naissance","required"=>true, "value"=> $data["UserBirthDate"])); ?>
 					<? form::input(array("label"=>"Rue","name"=>"UserAddress","type"=>"text","placeholder"=>"Rue","required"=>true, "value"=> $data["UserAddress"])); ?>
 					<? form::input(array("label"=>"Numéro","name"=>"UserAddressN","type"=>"number","placeholder"=>"Numéro","required"=>true, "value"=> $data["UserAddressN"])); ?>
-					<? form::input(array("label"=>"Boite","name"=>"UserAddressB","type"=>"text","placeholder"=>"Boite","required"=>true, "value"=> $data["UserAddressB"])); ?>
+					<? form::input(array("label"=>"Boite","name"=>"UserAddressB","type"=>"text","placeholder"=>"Boite","required"=>false, "value"=> $data["UserAddressB"])); ?>
 					<? form::input(array("label"=>"Code postal","name"=>"UserAddressC","type"=>"text","placeholder"=>"Code postal","required"=>true, "value"=> $data["UserAddressC"])); ?>
 					<? form::input(array("label"=>"Localité","name"=>"UserAddressL","type"=>"text","placeholder"=>"Localité","required"=>true, "value"=> $data["UserAddressL"])); ?>
 					<? form::input(array("label"=>"Numéro de téléphone","name"=>"UserPhone","type"=>"number","placeholder"=>"Numéro de téléphone","required"=>true, "value"=> $data["UserPhone"])); ?>

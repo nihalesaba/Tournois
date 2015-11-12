@@ -35,9 +35,15 @@ class User extends Controller {
 	 **profile
 	 **/
 	 public function profil(){
-		self::checksession(); 
-		$data["active"]=1;
-		$data['title'] = 'Profil';
+		self::checksession();
+		$User = $this->loadModel('user_model');
+		if (!empty($_POST)) {
+				$_SESSION["user"]["UserFirstName"] = $_POST["UserFirstName"];
+				$User->update($_POST,$_SESSION["user"]["UserId"]);
+				url::redirect(url::gotolink("./login"));
+		}
+		$data["User"]= $User->show($_SESSION["user"]["UserId"]);
+		$data['title'] = 'Edite profil';
 		$this->view->rendertemplate('user_header',$data);
 		$this->view->render('user/profil',$data);
 		$this->view->rendertemplate('user_footer',$data);

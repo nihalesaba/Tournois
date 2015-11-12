@@ -17,6 +17,11 @@ Router::post('register', 'login@register');
 /**STAFF ROUTES**/
 Router::get('staff', 'staff@index');
 
+/**PROFIL STAFF**/
+Router::get('staff/profil','staff@profil');
+Router::post('staff/profil','staff@profil');
+
+
 /**USERS MANAGEMENT**/
 
 Router::get('staff/users', 'staff@users');
@@ -48,6 +53,7 @@ Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
 
 /**USER ROUTES**/
 Router::get('user/profile','user@profil');
+Router::post('user/profile','user@profil');
 
 Router::get('user', 'user@index');
 Router::get('user/courts', 'user@courts');
