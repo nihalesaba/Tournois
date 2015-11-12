@@ -17,14 +17,10 @@ Router::post('register', 'login@register');
 /**STAFF ROUTES**/
 Router::get('staff', 'staff@index');
 
-/**PROFIL STAFF**/
-Router::get('staff/profil','staff@profil');
-Router::post('staff/profil','staff@profil');
-
-
 /**USERS MANAGEMENT**/
 
 Router::get('staff/users', 'staff@users');
+Router::get('staff/users/show/(:num)', 'staff@showuser');
 Router::get('staff/users/create', 'staff@adduser');
 Router::post('staff/users/create', 'staff@adduser');
 Router::get('staff/users/edit/(:num)', 'staff@edituser');
@@ -41,6 +37,7 @@ Router::post('staff/courts/edit/(:num)', 'staff@editcourt');
 Router::get('staff/courts/create', 'staff@addcourt');
 Router::post('staff/courts/create', 'staff@addcourt');
 Router::get('staff/courts/delete/(:num)', 'staff@deletecourt');
+Router::get('staff/courts/show/(:num)', 'staff@courtshow');
 
 
 /**TOURNAMENT MANAGEMENT**/
@@ -48,19 +45,11 @@ Router::get('staff/tours', 'staff@tours');
 Router::get('staff/tours/create', 'staff@addtour');
 Router::post('staff/tours/create', 'staff@addtour');
 Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
-Router::post('staff/tours/delete/(:num)', 'staff@deletetour');
-
-Router::get('staff/tours/group/(:num)', 'staff@group');
-Router::post('staff/tours/group/(:num)', 'staff@group');
-
-Router::get('staff/tours/knockoff/(:num)', 'staff@knockoff');
-Router::post('staff/tours/knockoff/(:num)', 'staff@knockoff');
+Router::get('staff/tours/show/(:num)', 'staff@tourshow');
+Router::post('staff/tours/edit/(:num)', 'staff@touredit');
 
 
 /**USER ROUTES**/
-Router::get('user/profile','user@profil');
-Router::post('user/profile','user@profil');
-
 Router::get('user', 'user@index');
 Router::get('user/courts', 'user@courts');
 Router::get('user/courts/create', 'user@addcourt');
@@ -68,18 +57,6 @@ Router::post('user/courts/create', 'user@addcourt');
 Router::get('user/courts/edit/(:num)', 'user@editcourt');
 Router::post('user/courts/edit/(:num)', 'user@editcourt');
 Router::get('user/courts/delete/(:num)','user@deletecourt');
-
-Router::get('user/tours', 'user@tours');
-Router::post('user/tours', 'user@tours');
-
-Router::get('user/tours/(:num)', 'user@teams');
-Router::post('user/tours/(:num)', 'user@teams');
-Router::get('user/tours/createteam/(:num)', 'user@createteam');
-Router::post('user/tours/createteam/(:num)', 'user@createteam');
-Router::get('user/tours/jointeam/(:num)', 'user@jointeam');
-Router::post('user/tours/jointeam/(:num)', 'user@jointeam');
-
-
 
 
 
