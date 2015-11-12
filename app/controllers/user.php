@@ -38,9 +38,7 @@ class User extends Controller {
 		self::checksession();
 		$User = $this->loadModel('user_model');
 		if (!empty($_POST)) {
-				echo 'coucou';
 				$_SESSION["user"]["UserFirstName"] = $_POST["UserFirstName"];
-				echo '<?php $_SESSION["user"]["UserId"]) ?>';
 				$User->update($_POST,$_SESSION["user"]["UserId"]);
 				url::redirect(url::gotolink("./login"));
 		}

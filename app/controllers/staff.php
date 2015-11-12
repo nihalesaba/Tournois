@@ -15,6 +15,25 @@ class Staff extends Controller {
 		$this->view->render('staff/index',$data);
 		$this->view->rendertemplate('staff_footer',$data);	
 	}
+	
+	/**
+	 ** Function to edit the staff profil
+	 **/
+	 public function profil(){
+		 self::checksession();
+		$User = $this->loadModel('user_model');
+		if (!empty($_POST)) {
+				$_SESSION["user"]["UserFirstName"] = $_POST["UserFirstName"];
+				$User->update($_POST,$_SESSION["user"]["UserId"]);
+				url::redirect(url::gotolink("./login"));
+		}
+		$data["User"]= $User->show($_SESSION["user"]["UserId"]);
+		$data['title'] = 'Edition du profil';
+		$this->view->rendertemplate('staff_header',$data);
+		$this->view->render('user/profil',$data);
+		$this->view->rendertemplate('staff_footer',$data);
+		 
+	 }
 	/**
 	 ** Users Functions
 	 **/

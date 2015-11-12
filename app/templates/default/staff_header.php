@@ -53,7 +53,7 @@
                         <ul class="dropdown-menu extended logout">
                             
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Mon profile</a>
+                                <a href='<?echo url::gotolink("./staff/profil");?>'></i> Editer mes informations</a>
                             </li>
                             <li>
                                 <a href="#"><i class="icon_mail_alt"></i> Communication interne</a>
@@ -75,9 +75,9 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu"> 
               		<li class="<?php echo $data['active']==1? "active": "";?>">
-                      <a class="" href="<?echo url::gotolink("./staff/profil");?>">
+                      <a class="" href="<?echo url::gotolink("./staff");?>">
                           <i class="icon_house_alt"></i>
-                          <span>Voir mon profil</span>
+                          <span>Acceuil</span>
                       </a>
                   </li>             
                   <li class="<?php echo $data['active']==1? "active": "";?>">

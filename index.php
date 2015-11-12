@@ -17,6 +17,11 @@ Router::post('register', 'login@register');
 /**STAFF ROUTES**/
 Router::get('staff', 'staff@index');
 
+/**PROFIL STAFF**/
+Router::get('staff/profil','staff@profil');
+Router::post('staff/profil','staff@profil');
+
+
 /**USERS MANAGEMENT**/
 
 Router::get('staff/users', 'staff@users');
