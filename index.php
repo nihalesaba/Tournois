@@ -48,6 +48,7 @@ Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
 
 /**USER ROUTES**/
 Router::get('user/profile','user@profil');
+Router::post('user/profile','user@profil');
 
 Router::get('user', 'user@index');
 Router::get('user/courts', 'user@courts');

@@ -1,20 +1,19 @@
-    <em><!--main content start-->
-    <section id="main-content">
-        <section class="wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel-body">
-                <? form::beginform();?>
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <? if (  isset($data["alert"]))echo  $data["alert"]; ?>
-                </div>
-                <div class="col-md-3"></div>
-                <!-- Multiple Radios -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="Titre">Titre</label>
-                    <div class="col-md-4">
-                    	<?php if ($_SESSION['user']["Titre"]=="Homme"): ?>
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-lg-10">
+				<? 
+					$data=$data["User"][0];
+					?>
+				<div class="panel-body">
+					<? form::beginform();?>
+					<!-- Multiple Radios -->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="Titre">Titre</label>
+						<div class="col-md-4">
+                    	
+                    	<?php if ($data["Titre"]=="Homme"): ?>
 							<div class="radio">
                             	<label for="Titre-0">
                             	<input type="radio" name="Titre" id="Titre-0" value="Homme" checked="checked">
@@ -27,7 +26,7 @@
                            		Femme
                            	</label>
                        		</div>
-                       		<?php elseif($_SESSION['user']["Titre"]=="Femme") : ?>
+                       		<?php elseif($data["Titre"]=="Femme") : ?>
                         	<div class="radio">
                             	<label for="Titre-0">
                             	<input type="radio" name="Titre" id="Titre-0" value="Homme">
@@ -55,24 +54,24 @@
                         	</div>	
                         <?php endif ;?>
                     </div>
-                </div> 
-                <!-- Text input-->
-                <? form::input(array("label"=>"Prénom","name"=>"UserFirstName","type"=>"text","placeholder"=>"Prénom","required"=>true, "value"=>  $_SESSION["user"]["UserFirstName"] )); ?>
-                <? form::input(array("label"=>"Nom","name"=>"UserLastName","type"=>"text","placeholder"=>"Nom","required"=>true , "value"=>  $_SESSION["user"]["UserLastName"])); ?>
-                <? form::input(array("label"=>"Date de naissance","name"=>"UserBirthDate","type"=>"date","placeholder"=>"Date de naissance","required"=>true, "value"=>  $_SESSION["user"]["UserBirthDate"])); ?>
-                <? form::input(array("label"=>"Rue","name"=>"UserAddress","type"=>"text","placeholder"=>"Rue","required"=>true, "value"=>  $_SESSION["user"]["UserAddress"])); ?>
-                <? form::input(array("label"=>"Numéro","name"=>"UserAddressN","type"=>"number","placeholder"=>"Numéro","required"=>true, "value"=>  $_SESSION["user"]["UserAddressN"])); ?>
-                <? form::input(array("label"=>"Boite","name"=>"UserAddressB","type"=>"text","placeholder"=>"Boite","required"=>false, "value"=>  $_SESSION["user"]["UserAddressB"])); ?>
-                <? form::input(array("label"=>"Code postal","name"=>"UserAddressC","type"=>"text","placeholder"=>"Code postal","required"=>true , "value"=>  $_SESSION["user"]["UserAddressC"])); ?>
-                <? form::input(array("label"=>"Localité","name"=>"UserAddressL","type"=>"text","placeholder"=>"Localité","required"=>true, "value"=>  $_SESSION["user"]["UserAddressL"])); ?>
-                <? form::input(array("label"=>"Numéro de téléphone","name"=>"UserPhone","type"=>"number","placeholder"=>"Numéro de téléphone","required"=>true, "value"=>  $_SESSION["user"]["UserPhone"])); ?>
-                <? form::input(array("label"=>"Mot de passe","name"=>"Userpassword","type"=>"password","placeholder"=>"Mot de passe","required"=>true)); ?>
-                <? form::input(array("label"=>"Confirmation du mot de passe","name"=>"Userpasswordconfirm","type"=>"password","placeholder"=>"Mot de passe","required"=>true,"opt"=> array("data-match"=>"#Userpassword", "data-match-error"=>"Le mot de passe ne correspond pas"))); ?>
-                <? form::submitbuttons();?>
-                <? form::endform();?>
-            </div>
-                </div>
-            </div>
-        </section>
-    </section>
-    <!--main content end--></em>
+					</div>
+                    <? $password = $data["Userpassword"] ?>
+					<!-- Text input-->
+					<? form::input(array("label"=>"Prénom","name"=>"UserFirstName","type"=>"text","placeholder"=>"Prénom","required"=>true, "value"=> $data["UserFirstName"])); ?>
+					<? form::input(array("label"=>"Nom","name"=>"UserLastName","type"=>"text","placeholder"=>"Nom","required"=>true, "value"=> $data["UserLastName"])); ?>
+					<? form::input(array("label"=>"Date de naissance","name"=>"UserBirthDate","type"=>"date","placeholder"=>"Date de naissance","required"=>true, "value"=> $data["UserBirthDate"])); ?>
+					<? form::input(array("label"=>"Rue","name"=>"UserAddress","type"=>"text","placeholder"=>"Rue","required"=>true, "value"=> $data["UserAddress"])); ?>
+					<? form::input(array("label"=>"Numéro","name"=>"UserAddressN","type"=>"number","placeholder"=>"Numéro","required"=>true, "value"=> $data["UserAddressN"])); ?>
+					<? form::input(array("label"=>"Boite","name"=>"UserAddressB","type"=>"text","placeholder"=>"Boite","required"=>false, "value"=> $data["UserAddressB"])); ?>
+					<? form::input(array("label"=>"Code postal","name"=>"UserAddressC","type"=>"text","placeholder"=>"Code postal","required"=>true, "value"=> $data["UserAddressC"])); ?>
+					<? form::input(array("label"=>"Localité","name"=>"UserAddressL","type"=>"text","placeholder"=>"Localité","required"=>true, "value"=> $data["UserAddressL"])); ?>
+					<? form::input(array("label"=>"Numéro de téléphone","name"=>"UserPhone","type"=>"number","placeholder"=>"Numéro de téléphone","required"=>true, "value"=> $data["UserPhone"])); ?>
+                    <? form::input(array("label"=>"Mot de passe","name"=>"Userpassword","type"=>"password","placeholder"=>"Mot de passe","required"=>true,"value"=> $data["Userpassword"])); ?>
+					<? form::submitbuttons();?>
+					<? form::endform();?>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+<!--main content end-->
