@@ -48,7 +48,13 @@ Router::get('staff/tours', 'staff@tours');
 Router::get('staff/tours/create', 'staff@addtour');
 Router::post('staff/tours/create', 'staff@addtour');
 Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
-Router::get('staff/tours/delete/(:num)', 'staff@deletetour');
+Router::post('staff/tours/delete/(:num)', 'staff@deletetour');
+
+Router::get('staff/tours/group/(:num)', 'staff@group');
+Router::post('staff/tours/group/(:num)', 'staff@group');
+
+Router::get('staff/tours/knockoff/(:num)', 'staff@knockoff');
+Router::post('staff/tours/knockoff/(:num)', 'staff@knockoff');
 
 
 /**USER ROUTES**/

@@ -232,6 +232,22 @@ class Staff extends Controller {
 		$this->view->rendertemplate('staff_footer',$data);
 
 	}
+	
+	public function group($tourid){
+		self::checksession();
+		
+		$this->view->rendertemplate('staff_header',$data);
+		$this->view->render('staff/group',$data);
+		$this->view->rendertemplate('staff_footer',$data);
+	}
+	
+	public function knockoff($tourid){
+		self::checksession();
+		
+		$this->view->rendertemplate('staff_header',$data);
+		$this->view->render('staff/knockoff',$data);
+		$this->view->rendertemplate('staff_footer',$data);
+	}
 
 	public function viewtour(){
 

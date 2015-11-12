@@ -15,7 +15,7 @@
 					<tbody>
 						<tr>
 							<?php 
-								$labels = array("Année", "Catégorie" , "Type" ,"Actions", "Gestions des poules", "Knock-off");
+								$labels = array("Année", "Catégorie" , "Type" ,"Actions");
 								
 								foreach($labels as $label): ?>
 							<th>
@@ -37,16 +37,6 @@
 									<a class="btn btn-primary" href="<? echo url::gotolink("./staff/tours").'/show/'.$result["TournamentId"];?>"><i class="icon_plus_alt2"></i></a>
 									<a class="btn btn-success" href="<? echo  url::gotolink("./staff/tours").'/edit/'.$result["TournamentId"];?>"><i class="icon_check_alt2"></i></a>
 									<a class="btn btn-danger" href="<? echo  url::gotolink("./staff/tours").'/delete/'.$result["TournamentId"];?>"><i class="icon_close_alt2"></i></a>
-								</div>
-							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn btn-primary" href="<? echo url::gotolink("./staff/tours").'/group/'.$result["TournamentId"];?>"><i class="icon_plus_alt2"></i></a>
-								</div>
-							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn btn-primary" href="<? echo url::gotolink("./staff/tours").'/knockoff/'.$result["TournamentId"];?>"><i class="icon_plus_alt2"></i></a>
 								</div>
 							</td>
 						</tr>
