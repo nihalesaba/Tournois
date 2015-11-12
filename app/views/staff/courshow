@@ -1,0 +1,47 @@
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-lg-10">
+				<header class="panel-heading">
+					Editer le terrain
+				</header>
+				
+					
+					<table class="table table-striped table-advance table-hover">
+					<tbody>
+						<tr>
+							<td> Numéro de terrain </td>
+							<td> Type de terrain </td>
+							<td> Adresse </td>
+							<td> Propriété </td>
+							<td> Comment accéder au terrain </td>
+							<td> Remarques propriétaires </td>
+							<td> Remarques staff </td>
+							<td> Disponible Samedi </td>
+							<td> Disponible Dimanche </td>
+							<td> id du proprietaire </td>
+							<td> Actions </td>
+						</tr>
+				<? 
+					$data=$data["Court"][0];
+					?>
+						<tr>
+							<td><?php echo $data["CourtId"]; ?></td>
+							<td><?php echo $data["CourtGroundType"]; ?></td>
+							<td><?php echo $data["CourtAddress"]." ".$data["CourtAddressN"]." ".$data["CourtAddressC"]." ".$data["CourtAddressL"]; ?></td>
+							<td><?php echo $data["CourtType"]; ?></td>
+							<td><?php echo $data["CourtAccessComments"];  ?></td>
+							<td><?php echo $data["CourtOwnerComments"];  ?></td>
+							<td><?php echo $data["CourtStaffComments"];  ?></td>
+							<td><?php echo $data["CourtAvailSat"];  ?></td>
+							<td><?php echo $data["CourtAvailSun"];  ?></td>
+							<td><?php echo $data["CourtOwner"];  ?></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</section>
+<!--main content end-->
